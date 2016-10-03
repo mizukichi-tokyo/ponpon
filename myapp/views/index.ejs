@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>ログイン後</title>
+  </head>
+  <body>
+    <h1>My Site</h1>
+    <p>Welcome to My Site</p>
+    <%= user %> さんようこそ。
+    <p>
+        <a href="/projects">プロジェクト管理へ</a>
+    </p>
+    <form action="/room" method="GET">
+      回答者画面へ<br>
+      <input type="text" name="room" placeholder="room name"/>
+      <input type="submit" value="enter"/>
+    </form>
+    <p>
+        <a href="/logout">ログアウト</a>
+    </p>
+  </body>
+</html>

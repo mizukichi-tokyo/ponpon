@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8"/>
+  <title>回答room</title>
+  <script type="text/javascript" src="http://localhost:3000/socket.io/socket.io.js"></script>
+  <script type="text/javascript">
+      var socket;
+      (function(){
+          // socket通信が開始される
+          socket = io.connect("http://localhost:3000");
+          console.log("せつぞくかいし");
+      })();
+  </script>
+</head>
+<body>
+    <%= user %> さんの回答ページ。<br>
+    <p>
+    ～待機中～
+    <p>
+
+
+</body>
+</html>

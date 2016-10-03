@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Question一覧</title>
+</head>
+<body>
+    <%= user %> さんのページ。<br>
+    プロジェクト名　：<%= project %><br>
+    <form action="/questions/make" method="POST">
+      <input type="text" name="sentence" placeholder="Question sentence"/><br>
+      <input type="text" name="type" placeholder="Question type"/><br>
+      <input type="text" name="choice1" placeholder="choice1"/><br>
+      <input type="text" name="choice2" placeholder="choice2"/><br>
+      <input type="text" name="choice3" placeholder="choice3"/><br>
+      <input type="text" name="choice4" placeholder="choice4"/><br>
+      <input type="hidden" name="projectId" value="<%= projectId %>" />
+      <input type="submit" value="new Sentence"/>
+    </form>
+    <table border=1>
+     <tr><th>sentence</th><th>type</th><th>choice1</th><th>choice2</th><th>choice3</th><th>choice4</th></tr>
+        <% docs.forEach(function(item){ %>
+          <tr><td><%= item.sentence %>　</a></td><td><%= item.type %></td><td><%= item.choice1 %></td><td><%= item.choice2 %></td><td><%= item.choice3 %></td><td><%= item.choice4 %></td></tr>
+        <% }) %>
+     </table>
+</body>
+</html>

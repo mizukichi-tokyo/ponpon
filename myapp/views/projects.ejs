@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8"/>
+  <title>プロジェクト一覧</title>
+</head>
+<body>
+    <%= user %> さんのページ。<br>
+    <form action="/projects/make" method="POST">
+      <input type="text" name="project" placeholder="Project Name"/>
+      <input type="submit" value="new Project"/>
+    </form>
+    <table border=1>
+     <tr><th></th><th>列-A</th><th>列-B</th></tr>
+        <% docs.forEach(function(item){ %>
+          <tr><td><a href="/questions?id=<%= item.id %>"><%= item.project %>　</a></td><td><%= item.email %></td><td>☆</td></tr>
+        <% }) %>
+     </table>
+</body>
+</html>

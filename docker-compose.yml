@@ -1,0 +1,18 @@
+web:
+  build: ./myapp
+  ports:
+    - "3000:3000"
+  links:
+    - "mongo"
+  environment:
+    - NODE_ENV
+  tty: true
+mongo:
+  image: mongo
+  ports:
+    - "27017:27017"
+  volumes_from:
+    - dataonly
+dataonly:
+  build: ./dockerfile_BusyBox
+  tty: true
